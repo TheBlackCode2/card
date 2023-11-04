@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --softBlue : hsl(215, 51%, 70%);
+    --cyan : hsl(178, 100%, 50%);
+    --bodyBg : hsl(217, 54%, 11%);
+    --cardBg : hsl(216, 50%, 16%);
+    --veryDarkBlue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+body {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    min-height : 100vh;
+    background-color: var(--bodyBg);
+    font-family: 'Outfit', sans-serif;
+}
+
+img {
+    max-width : 100%;
+    object-fit : cover;
+}
+
+.card {
+    width : 330px;
+    /* height : 540px; */
+    background-color : var(--cardBg);
+    padding : 24px;
+    border-radius : 16px; 
+    overflow : hidden;
+}
+
+.equilibrium-image {
+    border-radius : 10px;
+    overflow : hidden;
+    position : relative;
+    line-height : 0;
+}
+
+.equilibrium-image img {
+    transform-origin : center;
+    transition : 200ms ease-in-out;
+}
+
+.equilibrium-image:hover img {
+    transform : scale(1.2);
+}
+
+.equilibrium-image::after {
+    content : url(../img/icon-view.svg);
+    position : absolute;
+    inset : 0;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    background-color : hsla(178, 100%, 50%, 0.5);
+    cursor : pointer;
+    opacity : 0;
+    transition : 200ms ease-in-out;
+}
+
+.equilibrium-image:hover::after {
+    opacity : 1;
+}
+
+
+.card h1 {
+    font-size : 22px;
+    font-weight : 600;
+    color : var(--white);
+    margin-top : 20px;
+    margin-bottom : 12px;
+}
+
+.card p {
+    color : var(--softBlue);
+    font-size : 16px;
+    font-weight : 400;
+    line-height : 1.5;
+}
+
+.e-box {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    border-bottom : 1px solid var(--veryDarkBlue);
+    padding : 16px 0;
+}
+
+.eth-box, .time-box {
+    display : flex;
+    align-items : center;
+    gap : 7px;
+}
+
+.eth-box h2 {
+    font-size : 16px;
+    font-weight : 600;
+    color : var(--cyan);
+}
+
+.time-box h2 {
+    font-size : 16px;
+    font-weight : 600;
+    color : var(--softBlue);
+}
+
+.creative-box {
+    margin-top : 24px;
+    display : flex;
+    align-items : center;
+    gap : 16px;
+}
+
+.creative-image {
+    width : 33px;
+    height : 33px;
+    border-radius : 50%;
+    border : 2px solid var(--white);
+}
+
+.creative-box h2 {
+    font-size : 16px;
+    color : var(--softBlue);
+    font-weight : 600;
+}
+
+.creative-box h2 span {
+    color : var(--white);
+}
